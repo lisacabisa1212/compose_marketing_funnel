@@ -1,0 +1,128 @@
+- view: monthly_uniques
+  sql_table_name: ga.monthly_uniques
+  fields:
+
+  - dimension: id
+    primary_key: true
+    type: number
+    sql: ${TABLE}.id
+
+  - dimension: avg_session_duration
+    type: number
+    sql: ${TABLE}.avg_session_duration
+
+  - dimension: browser
+    type: string
+    sql: ${TABLE}.browser
+
+  - dimension: campaign
+    type: string
+    sql: ${TABLE}.campaign
+
+  - dimension: country
+    type: string
+    sql: ${TABLE}.country
+
+  - dimension_group: deleted
+    type: time
+    timeframes: [time, date, week, month]
+    sql: ${TABLE}.deleted_at
+
+  - dimension: device_category
+    type: string
+    sql: ${TABLE}.device_category
+
+  - dimension: goal12_completions_signup_pageviews
+    type: number
+    sql: ${TABLE}.goal12_completions_signup_pageviews
+
+  - dimension: goal13_completions_blog_pageviews
+    type: number
+    sql: ${TABLE}.goal13_completions_blog_pageviews
+
+  - dimension: goal6_completions_signups
+    type: number
+    sql: ${TABLE}.goal6_completions_signups
+
+  - dimension_group: inserted
+    type: time
+    timeframes: [time, date, week, month]
+    sql: ${TABLE}.inserted_at
+
+  - dimension: landing_page_path
+    type: string
+    sql: ${TABLE}.landing_page_path
+
+  - dimension: new_users
+    type: number
+    sql: ${TABLE}.new_users
+
+  - dimension: operating_system
+    type: string
+    sql: ${TABLE}.operating_system
+
+  - dimension: page_path
+    type: string
+    sql: ${TABLE}.page_path
+
+  - dimension: page_title
+    type: string
+    sql: ${TABLE}.page_title
+
+  - dimension: pageviews
+    type: number
+    sql: ${TABLE}.pageviews
+
+  - dimension: pageviews_per_session
+    type: number
+    sql: ${TABLE}.pageviews_per_session
+
+  - dimension: property_id
+    type: string
+    sql: ${TABLE}.property_id
+
+  - dimension: session_duration
+    type: number
+    sql: ${TABLE}.session_duration
+
+  - dimension: sessions
+    type: number
+    sql: ${TABLE}.sessions
+
+  - dimension: source_medium
+    type: string
+    sql: ${TABLE}.source_medium
+
+  - dimension: unique_dimension
+    type: string
+    sql: ${TABLE}.unique_dimension
+
+  - dimension: unique_pageviews
+    type: number
+    sql: ${TABLE}.unique_pageviews
+
+  - dimension_group: updated
+    type: time
+    timeframes: [time, date, week, month]
+    sql: ${TABLE}.updated_at
+
+  - dimension: users
+    type: number
+    sql: ${TABLE}.users
+
+  - dimension: view_alias
+    type: string
+    sql: ${TABLE}.view_alias
+
+  - dimension: view_id
+    type: number
+    sql: ${TABLE}.view_id
+
+  - dimension: year_month
+    type: number
+    sql: ${TABLE}.year_month
+
+  - measure: count
+    type: count
+    drill_fields: [id]
+
