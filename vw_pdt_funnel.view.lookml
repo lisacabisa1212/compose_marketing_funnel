@@ -104,8 +104,8 @@
       group by Month, Funnel
       order by Month, Funnel
     #sql_trigger_value: SELECT FLOOR((EXTRACT(epoch from NOW()) - 60*60*7)/(60*60*24))
-    sql_trigger_value: select now()
-    #persist_for: 24 hours
+    #sql_trigger_value: select now()
+    persist_for: 24 hours
     indexes: [Month]
 
   fields:
