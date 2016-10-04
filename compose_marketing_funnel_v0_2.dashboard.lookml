@@ -65,6 +65,7 @@
     y_axis_combined: true
     show_y_axis_labels: true
     show_y_axis_ticks: true
+    y_axis_labels: [Users (web traffic in 00s)]
     y_axis_tick_density: default
     show_x_axis_label: true
     show_x_axis_ticks: true
@@ -143,6 +144,7 @@
     show_y_axis_labels: true
     show_y_axis_ticks: true
     y_axis_tick_density: default
+    y_axis_labels: [Users (web traffic in 00s)]
     show_x_axis_label: true
     show_x_axis_ticks: true
     x_axis_scale: ordinal
