@@ -5,7 +5,7 @@
     sql: |
       -- Funnel flow by month
       -- Traffic
-      select distinct to_date(substr(cast(gau.year_month as text),1,4) || '-' || substr(cast(gau.year_month as text),5), 'YYYY-MM-DD') as Month, 'Step 1 - Website Traffic (visitors)' as Funnel, sum(gau.users) / 100 as Users
+      select distinct to_date(substr(cast(gau.year_month as text),1,4) || '-' || substr(cast(gau.year_month as text),5), 'YYYY-MM-DD') as Month, 'Step 1 - Website Traffic (visitors in 00s)' as Funnel, sum(gau.users) / 100 as Users
       from ga.monthly_uniques gau
       where gau.year_month >= '201601'
       and gau.view_alias = 'marketing_sites'
