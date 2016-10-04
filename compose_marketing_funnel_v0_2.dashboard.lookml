@@ -48,11 +48,6 @@
       vw_pdt_funnel.Month: 13 months
       #vw_pdt_funnel.Month: 2016/01/01 to 2016/06/30
     sorts: [vw_pdt_funnel.Funnel, vw_pdt_funnel.Month]
-    dynamic_fields:
-    - table_calculation: users_in_00s
-      label: Users (in 00s if more than 10k)
-      expression: if(${vw_pdt_funnel.Users}>abs(10000),${vw_pdt_funnel.Users} / 100, ${vw_pdt_funnel.Users})
-    hidden_fields: [vw_pdt_funnel.Users]
     limit: 500
     column_limit: 50
     stacking: normal
@@ -130,11 +125,6 @@
       vw_pdt_funnel.Event_date_quarter: 5 quarters
       #vw_pdt_funnel.Event_date_quarter: 2016/01/01 to 2016/06/30
     sorts: [vw_pdt_funnel.Funnel, vw_pdt_funnel.Event_date_quarter]
-    dynamic_fields:
-    - table_calculation: users_in_00s
-      label: Users (in 00s if more thank 10k)
-      expression: if(${vw_pdt_funnel.Users}>abs(10000),${vw_pdt_funnel.Users} / 100, ${vw_pdt_funnel.Users})
-    hidden_fields: [vw_pdt_funnel.Users]
     limit: 500
     column_limit: 50
     stacking: normal
