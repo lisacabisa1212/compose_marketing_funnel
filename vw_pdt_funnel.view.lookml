@@ -21,8 +21,8 @@
       from ga.monthly_uniques gau
       where gau.year_month >= '201601'
       and gau.view_alias = 'app'
-      and gau.page_path like '%signup/svelte%'
-      and gau.page_title = 'MongoDB, Redis, Elasticsearch, RethinkDB, & PostgreSQL Hosting with Compose | Compose'
+      and gau.page_path like '%signup%'
+      and (gau.page_title like '%Hosting%' or gau.page_title like 'Sign Up%')
       and gau.unique_dimension = 'page'
       and gau.deleted_at is null
       -- and to_date(substr(cast(gau.year_month as text),1,4) || '-' || substr(cast(gau.year_month as text),5), 'YYYY-MM-DD') >= date_trunc('month', now()) - interval '5 months'
