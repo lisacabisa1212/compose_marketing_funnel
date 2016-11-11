@@ -16,12 +16,12 @@
       
       UNION
       
-      -- Signup Page Viewers
+       -- Signup Page Viewers
       select distinct to_date(substr(cast(gau.year_month as text),1,4) || '-' || substr(cast(gau.year_month as text),5), 'YYYY-MM-DD') as Month, 'Step 2 - Signup Page Viewers' as Funnel, sum(gau.users) as Users
       from ga.monthly_uniques gau
       where gau.year_month >= '201601'
-      and gau.view_alias = 'app'
-      and gau.page_path like '%signup%'
+      and (gau.page_path like '%compose.com/signup%'
+        or gau.page_path like '%compose.io/signup%')
       and gau.page_title not like 'accounts Viewed Signup Page%'
       and gau.unique_dimension = 'page'
       and gau.deleted_at is null
